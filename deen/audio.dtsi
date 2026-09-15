@@ -161,10 +161,6 @@
 	};
 };
 
-&pm8953_diangu_dig{
-	qcom,cdc-micbias-cfilt-mv = <2750000>;
-};
-
 &i2c_2 {
 	tfa9874@34 {
 		compatible = "nxp,tfa9874";
