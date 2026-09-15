@@ -20,7 +20,7 @@
 };
 
 
-&pmi8950_charger {
+&qpnp_smbcharger {
 	/delete-property/ pinctrl-names;
 	/delete-property/ pinctrl-0;
 	/delete-property/ gpios;
@@ -95,7 +95,7 @@
 	};
 };
 
-&pmi8950_fg {
+&qpnp_fg {
 	/delete-property/ qcom,battery-data;
 	/delete-property/ qcom,capacity-learning-feedback;
 	qcom,warm-bat-decidegc = <450>;
