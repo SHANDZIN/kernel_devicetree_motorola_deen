@@ -31,9 +31,8 @@
 	gpio_keys {
 		compatible = "gpio-keys";
 		label = "gpio-keys";
-		pinctrl-names = "tlmm_gpio_key_active", "tlmm_gpio_key_suspend";
+		pinctrl-names = "default";
 		pinctrl-0 = <&gpio_key>;
-		pinctrl-1 = <&gpio_key>;
 
 		vol_up {
 			label = "volume_up";
