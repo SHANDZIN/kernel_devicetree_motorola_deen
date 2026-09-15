@@ -16,7 +16,7 @@
 #else
 #include "qcom/msm8953.dtsi"
 #endif
-#include "qcom/msm-pmi8950.dtsi"
+#include "qcom/pmi8950.dtsi"
 #include "qcom/msm8953-pinctrl.dtsi"
 
 /* Moto */
