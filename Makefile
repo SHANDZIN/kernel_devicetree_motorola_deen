@@ -5,6 +5,9 @@ DTC_FLAGS := -p 1024
 dtb-$(CONFIG_MACH_MOTOROLA_DEEN) += msm8953-deen-pvt1.dtb
 dtb-$(CONFIG_MACH_MOTOROLA_DEEN) += msm8953-deen-pvt2.dtb
 
+dtb-$(CONFIG_MACH_MOTOROLA_ALI) += sdm450-ali-pvt1.dtb
+dtb-$(CONFIG_MACH_MOTOROLA_ALI) += sdm450-ali-pvt2.dtb
+
 always		:= $(dtb-y)
 subdir-y	:= $(dts-dirs)
 clean-files	:= *.dtb
