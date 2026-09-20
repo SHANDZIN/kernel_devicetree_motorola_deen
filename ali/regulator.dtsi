@@ -10,22 +10,23 @@
  * GNU General Public License for more details.
  */
 
-/dts-v1/;
-
-#define SOC_SDM450
-#include "common/common.dtsi"
-#include "ali/ali.dtsi"
-
-/ {
-	model = "ali";
-	compatible = "qcom,sdm450-ali", "qcom,sdm450-moto",
-			"qcom,sdm450";
-
-	qcom,board-id = <0x43 0xC200>, <0x44 0xC200>;
+&pm8953_l22 {
+	regulator-min-microvolt = <2850000>;
+	regulator-max-microvolt = <2850000>;
+	qcom,init-voltage = <2850000>;
+	regulator-always-on;
 };
 
-&soc {
-	qcom,msm-thermal {
-		qcom,config-info = "ali2";
+&pm8953_gpios {
+	gpio@c100 { /* GPIO 2 - USB_5V_EN */
+		status = "okay";
+		qcom,mode = <1>;		/* Digital Output */
+		qcom,output-type = <0>;		/* CMOS logic */
+		qcom,pull = <5>;		/* No pull */
+		qcom,invert = <0>;		/* Output low initially */
+		qcom,vin-sel = <3>;		/* VIN3 */
+		qcom,src-sel = <0>;		/* GPIO */
+		qcom,out-strength = <2>;	/* Medium */
+		qcom,master-en = <1>;		/* Enable GPIO */
 	};
 };

@@ -10,19 +10,15 @@
  * GNU General Public License for more details.
  */
 
-/* Custom */
-#if defined(SOC_SDM450)
-#include "qcom/sdm450.dtsi"
-#else
-#include "qcom/msm8953.dtsi"
-#endif
-#include "qcom/msm-pmi8950.dtsi"
-#include "qcom/msm8953-pinctrl.dtsi"
+&soc {
+	fpc_fpc1020 {
+		compatible = "fpc,fpc1020";
+		status = "ok";
+		irq = <&tlmm 48 0>;
+		rst = <&tlmm 8 0>;
 
-/* Moto */
-#include "soc.dtsi"
-#include "pmi8950.dtsi"
-
-#include "carrier-channel-ids.dtsi"
-#include "include/moto-mem-reserve.h"
-#include "dsi-panel/dsi-panel-mot-dummy-qhd-video.dtsi"
+		pinctrl-names = "default", "suspend";
+		pinctrl-0 = <&ldo_en_active &int_active &rst_active>;
+		pinctrl-1 = <&ldo_en_suspend &int_suspend &rst_suspend>;
+	};
+};

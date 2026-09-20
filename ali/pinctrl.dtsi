@@ -1,4 +1,4 @@
-/* Copyright (c) 2016, Motorola Mobility Inc. All rights reserved.
+/* Copyright (c) 2018, Motorola Mobility Inc. All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
@@ -10,13 +10,12 @@
  * GNU General Public License for more details.
  */
 
+/delete-node/ &hsuart_active;
+/delete-node/ &hsuart_sleep;
+/delete-node/ &blsp2_uart0_active;
+/delete-node/ &blsp2_uart0_sleep;
+
 &tlmm{
-	/delete-node/ cs35l34_reset_default;
-	/delete-node/ pmx_motosh_out;
-	/delete-node/ pmx_motosh_in;
-	/delete-node/ factory_default;
-	/delete-node/ hub_reset_n_default;
-	/delete-node/ fps;
 
 
 
@@ -137,13 +136,6 @@
 
 	};
 
-	apba_default@0 {
-		mphy_i2s_sel {
-			pins = "gpio47";
-			drive-strength = <2>;
-		};
-	};
-
 	/delete-node/ cdc-pdm-lines;
 	cdc-pdm-lines {
 		cdc_pdm_lines_act: pdm_lines_on {
@@ -197,6 +189,7 @@
 					"gpio137", "gpio138";
 				drive-strength = <2>;
 				bias-pull-down;
+				input-enable;
 			};
 		};
 	};
@@ -215,76 +208,6 @@
 			output-high;
 			bias-pull-up;
 			drive-strength = <2>;
-		};
-	};
-
-	anx_rst_active {
-		mux {
-			pins = "gpio128";
-		};
-		config {
-			pins = "gpio128";
-		};
-	};
-	anx_rst_suspend {
-		mux {
-			pins = "gpio128";
-		};
-		config {
-			pins = "gpio128";
-		};
-	};
-	anx_cbl_det_active {
-		mux {
-			pins = "gpio9";
-		};
-		config {
-			pins = "gpio9";
-		};
-	};
-	anx_irq_active {
-		mux {
-			pins = "gpio87";
-		};
-		config {
-			pins = "gpio87";
-		};
-	};
-	hd3ss460_amsel {
-		hd3ss460_amsel_default: default {
-			mux {
-				pins = "gpio139";
-				function = "gpio";
-			};
-			config {
-				pins = "gpio139";
-				drive-strength = <2>;
-				bias-pull-up; /* pull-up */
-				output-low;
-			};
-		};
-		hd3ss460_amsel_active: active {
-			mux {
-				pins = "gpio139";
-				function = "gpio";
-			};
-			config {
-				pins = "gpio139";
-				drive-strength = <2>;
-				bias-pull-up; /* pull-up */
-			};
-		};
-	};
-
-	muc_attach@0 {
-		config {
-			pins = "gpio60", "gpio36";
-		};
-	};
-
-	muc_spi_ctrl@0 {
-		config {
-			pins = "gpio38", "gpio36", "gpio59";
 		};
 	};
 
@@ -375,6 +298,22 @@
 	};
 
 	i2c_2 {
+		i2c_2_sleep {
+			mux {
+				function = "blsp_i2c2";
+			};
+		};
+	};
+
+	i2c_3 {
+		i2c_3_sleep {
+			mux {
+				function = "blsp_i2c3";
+			};
+		};
+	};
+
+	i2c_2 {
 		laser_active_irq: laser_active_irq {
 			mux {
 				pins = "gpio129";
@@ -445,21 +384,59 @@
 		fusb302_int_default: default {
 			mux {
 				pins = "gpio9";
+				function = "gpio";
 			};
 
 			config {
 				pins = "gpio9";
+				drive-strength = <2>;
+				bias-pull-up; /* pull-up */
 			};
 		};
 
 		fusb302_int_active: active {
 			mux {
 				pins = "gpio9";
+				function = "gpio";
 			};
 
 			config {
 				pins = "gpio9";
+				drive-strength = <2>;
+				bias-pull-up; /* pull-up */
 			};
+		};
+	};
+
+	/delete-node/ tlmm_gpio_key;
+	tlmm_gpio_key {
+		gpio_key: gpio_key {
+			mux {
+				pins = "gpio85";
+				function = "gpio";
+			};
+			config {
+				pins = "gpio85";
+				drive-strength = <2>;
+				bias-pull-up;
+			};
+		};
+	};
+
+	marley_irq_default: marley_irq_default {
+		config {
+			pins = "gpio46";
+			drive-strength = <2>;
+			bias-pull-up;
+		};
+	};
+
+	marley_reset_default: marley_reset_default {
+		config {
+			pins = "gpio68";
+			output-high;
+			bias-pull-up;
+			drive-strength = <2>;
 		};
 	};
 };

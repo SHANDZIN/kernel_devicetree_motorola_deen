@@ -1,5 +1,4 @@
-/*
- * Copyright (c) 2015-2016, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2018, Motorola Mobility Inc. All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
@@ -10,6 +9,7 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  */
+
 &pmi8950_flash0 {
 	qcom,current = <625>;
 };
@@ -599,7 +599,7 @@
 	rpm-regulator-ldoa2 {
 		status = "okay";
 		pm8953_l2: regulator-l2 {
-			regulator-min-microvolt = <1200000>;
+			regulator-min-microvolt = <1000000>;
 			regulator-max-microvolt = <1200000>;
 			qcom,init-voltage = <1200000>;
 			status = "okay";
@@ -634,4 +634,5 @@
 			qcom,init-voltage = <1050000>;
 			status = "okay";
 		};
-	};};
+	};
+};

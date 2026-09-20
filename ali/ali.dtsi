@@ -10,19 +10,21 @@
  * GNU General Public License for more details.
  */
 
-/* Custom */
-#if defined(SOC_SDM450)
-#include "qcom/sdm450.dtsi"
-#else
-#include "qcom/msm8953.dtsi"
-#endif
-#include "qcom/msm-pmi8950.dtsi"
-#include "qcom/msm8953-pinctrl.dtsi"
-
-/* Moto */
-#include "soc.dtsi"
+#include "android.dtsi"
+#include "audio.dtsi"
+#include "battery.dtsi"
+#include "bus.dtsi"
+#include "camera.dtsi"
+#include "display.dtsi"
+#include "fingerprint.dtsi"
+#include "misc.dtsi"
+#include "nfc.dtsi"
+#include "pinctrl.dtsi"
 #include "pmi8950.dtsi"
-
-#include "carrier-channel-ids.dtsi"
-#include "include/moto-mem-reserve.h"
-#include "dsi-panel/dsi-panel-mot-dummy-qhd-video.dtsi"
+#include "regulator.dtsi"
+#include "reserved-memory.dtsi"
+#include "sensor.dtsi"
+#include "storage.dtsi"
+#include "thermal.dtsi"
+#include "touchscreen.dtsi"
+#include "vibrator.dtsi"

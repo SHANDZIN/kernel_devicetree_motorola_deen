@@ -10,19 +10,14 @@
  * GNU General Public License for more details.
  */
 
-/* Custom */
-#if defined(SOC_SDM450)
-#include "qcom/sdm450.dtsi"
-#else
-#include "qcom/msm8953.dtsi"
-#endif
-#include "qcom/msm-pmi8950.dtsi"
-#include "qcom/msm8953-pinctrl.dtsi"
-
-/* Moto */
-#include "soc.dtsi"
-#include "pmi8950.dtsi"
-
-#include "carrier-channel-ids.dtsi"
-#include "include/moto-mem-reserve.h"
-#include "dsi-panel/dsi-panel-mot-dummy-qhd-video.dtsi"
+&pmi_haptic {
+	qcom,lra-auto-res-mode = "none";
+	qcom,lra-high-z = "opt1";
+	qcom,lra-res-cal-period = <4>;
+	qcom,wave-play-rate-us = <4255>;
+	qcom,vmax-mv = <2500>;
+	qcom,vmax-low-mv = <1160>;
+	qcom,context-haptics;
+	qcom,brake-pattern = [03 03 03 03];
+	qcom,misc-trim-error-rc19p2-clk-reg-present;
+};

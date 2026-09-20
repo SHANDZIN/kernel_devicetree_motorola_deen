@@ -10,19 +10,24 @@
  * GNU General Public License for more details.
  */
 
-/* Custom */
-#if defined(SOC_SDM450)
-#include "qcom/sdm450.dtsi"
-#else
-#include "qcom/msm8953.dtsi"
-#endif
-#include "qcom/msm-pmi8950.dtsi"
-#include "qcom/msm8953-pinctrl.dtsi"
+&spmi_bus {
+	qcom,pm8950@0 {
+		/delete-node/ qcom,leds@a300;
+	};
 
-/* Moto */
-#include "soc.dtsi"
-#include "pmi8950.dtsi"
+	qcom,pmi8950@2 {
+		/delete-node/ qcom,leds@a100;
 
-#include "carrier-channel-ids.dtsi"
-#include "include/moto-mem-reserve.h"
-#include "dsi-panel/dsi-panel-mot-dummy-qhd-video.dtsi"
+		qcom,leds@1000 {
+			status = "ok";
+			reg = <0x1000 0x100>;
+			compatible = "qcom,leds-atc";
+			linux,name = "charging";
+			qcom,ctrl-reg = <0x243>;
+		};
+
+		qcom,power-on@800 {
+			qcom,shipmode;
+		};
+	};
+};
