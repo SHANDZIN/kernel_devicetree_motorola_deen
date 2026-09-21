@@ -26,3 +26,16 @@
 #include "carrier-channel-ids.dtsi"
 #include "include/moto-mem-reserve.h"
 #include "dsi-panel/dsi-panel-mot-dummy-qhd-video.dtsi"
+
+/* Shared */
+#inclide "android.dtsi"
+#include "thermal.dtsi"
+#include "storage.dtsi"
+#include "reserved-memory.dtsi"
+#include "bus.dtsi"
+#include "display.dtsi"
+#include "misc.dtsi"
+#include "pinctrl.dtsi"
+#include "battery.dtsi"
+#include "camera.dtsi"
+#include "nfc.dtsi"

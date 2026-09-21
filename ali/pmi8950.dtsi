@@ -11,23 +11,7 @@
  */
 
 &spmi_bus {
-	qcom,pm8950@0 {
+	qcom,pm8953@0 {
 		/delete-node/ qcom,leds@a300;
-	};
-
-	qcom,pmi8950@2 {
-		/delete-node/ qcom,leds@a100;
-
-		qcom,leds@1000 {
-			status = "ok";
-			reg = <0x1000 0x100>;
-			compatible = "qcom,leds-atc";
-			linux,name = "charging";
-			qcom,ctrl-reg = <0x243>;
-		};
-
-		qcom,power-on@800 {
-			qcom,shipmode;
-		};
 	};
 };

@@ -127,16 +127,6 @@
 	/delete-property/ qcom,dsi-pll-ssc-mode;
 };
 
-/* display boost and inverting boost regulators */
-&labibb {
-	status = "ok";
-	qpnp,qpnp-labibb-mode = "lcd";
-};
-
-&ibb_regulator {
-	qcom,qpnp-ibb-discharge-resistor = <32>;
-};
-
 &pmi8950_mpps {
 	mpp@a200 { /* MPP 3 - DISP_AVDD_SHUTDOWN */
 		qcom,mode = <1>;		/* Digital output */

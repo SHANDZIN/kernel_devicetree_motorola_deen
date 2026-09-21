@@ -11,7 +11,7 @@
  */
 
 &soc {
-        qusb_phy: qusb@79000 {
+	qusb_phy: qusb@79000 {
                 qcom,qusb-phy-init-seq = <0xF8 0x80
                                         0x97 0x84
                                         0x83 0x88
@@ -25,34 +25,8 @@
                                         0x00 0x18>;
                 /*Make sure QUSB PHY is into proper state to
                   avoid interfering USB charger detection*/
-                mmi,enable-high-z-state;
-        };
-
-	gpio_keys {
-		compatible = "gpio-keys";
-		label = "gpio-keys";
-		pinctrl-names = "tlmm_gpio_key_active", "tlmm_gpio_key_suspend";
-		pinctrl-0 = <&gpio_key>;
-		pinctrl-1 = <&gpio_key>;
-
-		vol_up {
-			label = "volume_up";
-			gpios = <&tlmm 85 0x1>;
-			linux,input-type = <1>;
-			linux,code = <115>;
-			gpio-key,wakeup;
-			debounce-interval = <15>;
-			linux,can-disable;
-		};
+		mmi,enable-high-z-state;
 	};
-
-        usb_otg_switch: usb-otg-switch {
-                compatible = "regulator-fixed";
-                regulator-name = "usb_otg_vreg";
-                vin-supply = <&smbcharger_charger_otg>;
-                enable-active-high;
-                status = "okay";
-        };
 
         usb3: ssusb@7000000 {
                 /delete-property/ pinctrl-names;
@@ -63,21 +37,7 @@
         };
 };
 
-&i2c_1 {
-       fusb302@22 {
-            compatible = "fairchild,fusb302";
-            reg = <0x22>;
-            gpios = <&tlmm 9 1>; /* FUSB302_INT_N, in */
-            fusb,gpio-labels = "gpio_fusb_int_n";
-            pinctrl-names = "default", "active";
-            pinctrl-0 = <&fusb302_int_default>;
-            pinctrl-1 = <&fusb302_int_active>;
-        };
-};
 
-&pm8953_typec {
-        status = "disabled";
-};
 
 
 
