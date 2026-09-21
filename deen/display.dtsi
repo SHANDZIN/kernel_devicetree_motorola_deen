@@ -75,13 +75,3 @@
 	/delete-property/ qcom,dsi-pll-ssc-mode;
 };
 
-/* display boost and inverting boost regulators */
-&labibb {
-	status = "ok";
-	qpnp,qpnp-labibb-mode = "lcd";
-};
-
-&ibb_regulator {
-	qcom,qpnp-ibb-discharge-resistor = <32>;
-};
-

@@ -11,10 +11,6 @@
  */
 
 &soc {
-	qcom,msm-thermal {
-		qcom,config-info = "deen";
-	};
-
 	qcom,bcl {
 		qcom,bcl-charger-mitigate-enable;
 	};

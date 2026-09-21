@@ -24,3 +24,9 @@
 
 	qcom,board-id = <0x4D 0xC100>;
 };
+
+&soc {
+	qcom,msm-thermal {
+		qcom,config-info = "deen";
+	};
+};

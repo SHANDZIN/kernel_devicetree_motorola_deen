@@ -11,81 +11,6 @@
  */
 
 &tlmm {
-	nfc_irq_default: nfc_irq_default {
-		config {
-			 pins = "gpio17";
-			 drive-strength = <2>;
-			 bias-pull-down;
-		};
-	};
-
-	nfc_ven_default: nfc_ven_default {
-		config {
-			 pins = "gpio16";
-			 drive-strength = <2>;
-			 bias-pull-down;
-			 output-low;
-		};
-	};
-	nfc_firm_default: nfc_firm_default {
-		config {
-			  pins = "gpio62";
-			  drive-strength = <2>;
-			  bias-pull-down;
-			  output-low;
-		};
-	};
-
-	i2c_1 {
-		i2c_1_active: i2c_1_active {
-			i2c_1 {
-				pins = "gpio2", "gpio3";
-				function = "blsp_i2c1";
-				drive-strength = <2>;
-				bias-disable;
-			};
-		};
-
-		i2c_1_sleep: i2c_1_sleep {
-			i2c_1 {
-				pins = "gpio2", "gpio3";
-				function = "blsp_i2c1";
-				drive-strength = <2>;
-				bias-disable;
-			};
-		};
-	};
-
-	fusb302_int{
-	/*label = "fusb302-int";*/
-
-		fusb302_int_default: default {
-			mux {
-				pins = "gpio9";
-				function = "gpio";
-			};
-
-			config {
-				pins = "gpio9";
-				drive-strength = <2>;
-				bias-pull-up; /* pull-up */
-			};
-		};
-
-		fusb302_int_active: active {
-			mux {
-				pins = "gpio9";
-				function = "gpio";
-			};
-
-			config {
-				pins = "gpio9";
-				drive-strength = <2>;
-				bias-pull-up; /* pull-up */
-			};
-		};
-	};
-
 	abov_int_pin {
 		/* qcom,pins = <&gp 48>;*/
 		pins = "gpio86";
@@ -270,21 +195,6 @@
 				"gpio137", "gpio138";
 				drive-strength = <2>;
 				bias-pull-down;
-			};
-		};
-	};
-
-	/delete-node/ tlmm_gpio_key;
-	tlmm_gpio_key {
-		gpio_key: gpio_key {
-			mux {
-				pins = "gpio85";
-				function = "gpio";
-			};
-			config {
-				pins = "gpio85";
-				drive-strength = <2>;
-				bias-pull-up;
 			};
 		};
 	};
