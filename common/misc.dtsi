@@ -17,6 +17,7 @@
 	/delete-node/ &wsa881x_analog_reset_gpio;
 
 &i2c_1 {
+    status = "okay";
 	fusb302@22 {
 		compatible = "fairchild,fusb302";
 		reg = <0x22>;

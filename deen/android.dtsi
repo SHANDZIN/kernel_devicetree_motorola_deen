@@ -29,9 +29,6 @@
                                 fsmgr_flags = "wait,verify,slotselect";
                                 status = "ok";
                         };
-                        system {
-                                status = "disable";
-                        };
                 };
         };
 };
