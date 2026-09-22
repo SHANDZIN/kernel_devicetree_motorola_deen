@@ -10,7 +10,7 @@
  * GNU General Public License for more details.
  */
 
-&pmi8950_charger {
+&qpnp_smbcharger {
 	status = "okay";
 	/delete-property/ pinctrl-names;
 	/delete-property/ pinctrl-0;
@@ -78,7 +78,7 @@
 	};
 };
 
-&pmi8950_fg {
+&qpnp_fg {
 	/delete-property/ qcom,battery-data;
 	qcom,warm-bat-decidegc = <450>;
 	qcom,cool-bat-decidegc = <0>;

@@ -20,7 +20,7 @@
 	};
 };
 
-&pmi8950_charger {
+&qpnp_smbcharger {
 	qcom,eb-batt-psy-name = "gb_battery";
 	qcom,eb-pwr-psy-name = "gb_ptp";
 	qcom,stepchg-iterm-ma = <170>;
@@ -30,6 +30,6 @@
 				<60 1500 0>;
 };
 
-&pmi8950_fg {
+&qpnp_fg {
 	qcom,thermal-coefficients =  /bits/ 16 <0xB785 0xB249 0x7135>;
 };
