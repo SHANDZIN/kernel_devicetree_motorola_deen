@@ -12,6 +12,7 @@
 
 &spmi_bus {
 	qcom,pm8953@0 {
+		/delete-property/ qcom,store-hard-reset-reason;
 		qcom,power-on@800 {
 			qcom,pon_3 {
 				qcom,pon-type = <3>;

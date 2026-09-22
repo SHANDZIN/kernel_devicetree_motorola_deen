@@ -12,6 +12,7 @@
 
 &spmi_bus {
 	qcom,pm8953@0 {
+		/delete-property/ qcom,store-hard-reset-reason;
 		/delete-node/ qcom,leds@a300;
 	};
 };
