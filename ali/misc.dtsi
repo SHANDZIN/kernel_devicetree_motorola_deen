@@ -28,6 +28,7 @@
 	};
 
 	usb3: ssusb@7000000 {
+		extcon = <&qpnp_smbcharger>;
 		mmi,qos_latency = <10999>;
 		/delete-property/ pinctrl-names;
 		/delete-property/ pinctrl-0;
